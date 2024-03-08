@@ -13,3 +13,40 @@
 td{
     border : 1px solid var(--grey)!important
 }
+  .confirmation-box {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(134, 74, 74);
+    border: 1px solid #ccc;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15%;
+}
+
+  
+  .confirmation-message {
+    margin-bottom: 20px;
+  }
+  
+  .confirm-btn,
+  .cancel-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15%;
+  }
+  
+  .confirm-btn {
+    background-color: #4caf50;
+    color: white;
+    
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  

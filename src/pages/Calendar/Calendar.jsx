@@ -14,7 +14,7 @@ const Calendar = () => {
     const handleEvents = async (events) => {
         await Promise.resolve(setCurrentEvents(events))
     }
-
+// handle the date select
     const handleDateSelect = (selectInfo) => {
         let title = prompt('Please enter a title for the event')
         let calendarApi = selectInfo.view.calendar;
@@ -32,20 +32,44 @@ const Calendar = () => {
             })
         }
     }
-
+// handle the event click
     const handleEventClick = (clickInfo) => {
-        if (
-            confirm('Are you sure you want to delete this event?')
-
-        ) {
-            clickInfo.event.remove()
-        }
-    }
+        const confirmationBox = document.createElement('div');
+        confirmationBox.classList.add('confirmation-box');
+      
+        const message = document.createElement('p');
+        message.textContent = `Are you sure you want to delete the event '${clickInfo.event.title}' from ${clickInfo.event.startStr} to ${clickInfo.event.endStr}?`;
+        message.classList.add('confirmation-message');
+      
+        const confirmBtn = document.createElement('button');
+        confirmBtn.textContent = 'Confirm';
+        confirmBtn.classList.add('confirm-btn');
+      
+        const cancelBtn = document.createElement('button');
+        cancelBtn.textContent = 'Cancel';
+        cancelBtn.classList.add('cancel-btn');
+      
+        confirmationBox.appendChild(message);
+        confirmationBox.appendChild(confirmBtn);
+        confirmationBox.appendChild(cancelBtn);
+      
+        document.body.appendChild(confirmationBox);
+      
+        confirmBtn.addEventListener('click', () => {
+          clickInfo.event.remove();
+          document.body.removeChild(confirmationBox);
+        });
+      
+        cancelBtn.addEventListener('click', () => {
+          document.body.removeChild(confirmationBox);
+        });
+      }
+      
 
     return (
         <div className="calendar-container">
 
-            <div>
+            <div className='button left and right'>
                 <FullCalendar
                     plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
                     headerToolbar={{

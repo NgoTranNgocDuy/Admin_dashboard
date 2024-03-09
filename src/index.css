@@ -26,6 +26,9 @@ body {
   color: white;
   font-family: "Public Sans", sans-serif;
   overflow: scroll;
+  scrollbar-color: #d34444 #111111;
+  scrollbar-width: thin;
+  
 }
 
 .theme-container {

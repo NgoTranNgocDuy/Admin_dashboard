@@ -1,10 +1,15 @@
 .table-container{
     padding: 3rem 5rem;
+    /* css for the table inside, not the whole div */
 }
+
 .table-container>:nth-child(1)
 {
-    border-radius: 10px!important;
-    overflow: hidden!important;;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(40, 28, 119, 0.1);
+    border: 3px solid #7d2323;
 }
 .MuiTableRow-root, .MuiTableCell-root{
     border: none!important;

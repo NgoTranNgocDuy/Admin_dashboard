@@ -26,7 +26,7 @@ const Sidebar = () => {
                 <NavLink
                     to="board"
                     className={css.item}
-                    title="Trello Board"
+                    title="Trello Board 1 "
                 >
                     <FaTasks size={30} />
                 </NavLink>
